@@ -8,16 +8,12 @@ import { signInSuccess } from './actions';
 export function* signIn({ payload }) {
   const { email, password } = payload;
 
-  console.tron.log(email);
-
   const response = yield call(api.post, 'sessions', {
     email,
     password,
   });
 
   const { token, user } = response.data;
-
-  console.tron.log(user);
 
   if (!user.provider) {
     console.tron.error('Usuário não é prestador');
