@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 600px;
-  margin: 50px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding: 15px;
   header {
     display: flex;
     align-self: center;
