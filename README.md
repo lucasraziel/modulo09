@@ -37,6 +37,7 @@ It is separated among three projects
 - [Getting Started](#getting_started)
 - [Built Using](#built_using)
 - [Acknowledgments](#acknowledgement)
+- [Author](#author)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -44,6 +45,12 @@ This is a demonstration for appintments for a barber shop. The web version is fo
 the professional. He is goint to see his appointments in this environment.
 The mobile version is for the clients. He will be able to schedule his appintments with
 his mobile.
+
+There is a demo version of this web app in the following link
+
+[Demonstration](https://gobarber.lucasrego.com)
+
+Unfortunately, there is no a demonstration versio for mobile.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -141,6 +148,11 @@ The ios test will be only possible in mac OS.
 - [ReactJS](https://reactjs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 - [React-Native](https://reactnative.dev/) - Mobile Framework
+
+
+# Author <a name = "author"></a>
+
+Lucas Rego [GitHub](https://github.com/lucasraziel) [Resume](https://lucasrego.com)
 
 
 
