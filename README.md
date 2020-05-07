@@ -1,68 +1,146 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://user-images.githubusercontent.com/26093830/81298384-16577a00-904b-11ea-8bd1-af5590094375.PNG" alt="Project logo" style="border-radius:50%"></a>
+</p>
 
-## Available Scripts
+<h3 align="center">gobarber-web</h3>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+<p align="justify">
+This software is a demonstration for scheduling appointments for a barber shop.
+<br>
+<div align="center">
+<img width="640px" h src="https://user-images.githubusercontent.com/26093830/81298378-148db680-904b-11ea-8c18-96fc9ba1391e.PNG" alt="webpage"/>
+<img width="640px"  src="https://user-images.githubusercontent.com/26093830/81298381-15bee380-904b-11ea-8df7-b98f27a15423.PNG" alt="webpage"/>
+<img width="300px"  src="https://user-images.githubusercontent.com/26093830/81298426-27a08680-904b-11ea-955e-52b8d85ac6ca.jpeg"/>
+<img width="300px"  src="https://user-images.githubusercontent.com/26093830/81298431-28391d00-904b-11ea-987b-deccd8821b5a.jpeg"/>
+<img width="300px"  src="https://user-images.githubusercontent.com/26093830/81298434-28d1b380-904b-11ea-8c05-e6b3fd67455a.jpeg"/>
+<img width="300px"  src="https://user-images.githubusercontent.com/26093830/81298438-28d1b380-904b-11ea-9da9-761b3fa4cde3.jpeg"/>
+</div>
+It is separated among three projects
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - [Backend](https://github.com/lucasraziel/gobarber-server)
+ - [Web](https://github.com/lucasraziel/modulo09)
+ - [Mobile](https://github.com/lucasraziel/modulo10)
+    <br>
+</p>
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## 📝 Table of Contents
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [About](#about)
+- [Getting Started](#getting_started)
+- [Built Using](#built_using)
+- [Acknowledgments](#acknowledgement)
 
-### `npm run eject`
+## 🧐 About <a name = "about"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This is a demonstration for appintments for a barber shop. The web version is for
+the professional. He is goint to see his appointments in this environment.
+The mobile version is for the clients. He will be able to schedule his appintments with
+his mobile.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+These instructions will get you a copy of the project up and running on your local machine for development.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Prerequisites
 
-## Learn More
+You will need to have installe in your machine NodeJs, Redis, Postgresql and MongoDB. You should also have
+an environment ready for react-native.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Backend
 
-### Code Splitting
+To install the backend, these are the steps required:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+You should start postresql, with a new database ready for it (the name is of you choice).
 
-### Analyzing the Bundle Size
+You should also start redis and mongodb server.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+```
+git clone https://github.com/lucasraziel/gobarber-server.git gobarber-server
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+cd gobarber-server
 
-### Advanced Configuration
+yarn
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```
 
-### Deployment
+It is also required to setup the environment. The .env.example file must be renamed to
+.env and must have its data complete according to your environment.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+```
+yarn sequelize db:migrate
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+yarn dev
+
+yarn queue
+```
+
+The yarn queue command is only required if you wish that the application sends their emails.
+
+
+#### Web
+
+The web environment must be installed in this manner:
+
+```
+git clone https://github.com/lucasraziel/modulo09.git gobarber-web
+
+cd gobarber-web
+
+yarn
+
+```
+
+You must, then, edit src/services/api.js and edit the file to adjust your server
+configuration
+
+```
+yarn start
+```
+
+#### Mobile
+
+To install the react-native environment, It is a good idea to follow these instructions
+(it is in brazilian portuguese) [instructions](https://react-native.rocketseat.dev/).
+
+The src/services/api.js must be editted in the same way that was in web environment.
+
+```
+git clone https://github.com/lucasraziel/modulo10.git gobarber-web
+
+cd gobarber-web
+
+yarn
+
+react-native run-android
+
+react-native run-ios
+
+```
+
+The ios test will be only possible in mac OS.
+
+
+
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Express](https://expressjs.com/) - Server Framework
+- [ReactJS](https://reactjs.org/) - Web Framework
+- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [React-Native](https://reactnative.dev/) - Mobile Framework
+
+
+
