@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://user-images.githubusercontent.com/26093830/81298384-16577a00-904b-11ea-8bd1-af5590094375.PNG" alt="Project logo" style="border-radius:50%"></a>
 </p>
 
-<h3 align="center">gobarber-web</h3>
+<h3 align="center">gobarber-Web</h3>
 
 
 
@@ -26,8 +26,8 @@ This software is a demonstration for scheduling appointments for a barber shop.
 It is separated among three projects
 
  - [Backend](https://github.com/lucasraziel/gobarber-server)
- - [Web](https://github.com/lucasraziel/modulo09)
- - [Mobile](https://github.com/lucasraziel/modulo10)
+ - [Web](https://github.com/lucasraziel/gobarber-webv1)
+ - [Mobile](https://github.com/lucasraziel/gobarber-mobilev1)
     <br>
 </p>
 
@@ -101,7 +101,7 @@ The yarn queue command is only required if you wish that the application sends t
 The web environment must be installed in this manner:
 
 ```
-git clone https://github.com/lucasraziel/modulo09.git gobarber-web
+git clone https://github.com/lucasraziel/gobarber-webv1.git gobarber-web
 
 cd gobarber-web
 
@@ -124,9 +124,9 @@ To install the react-native environment, It is a good idea to follow these instr
 The src/services/api.js must be editted in the same way that was in web environment.
 
 ```
-git clone https://github.com/lucasraziel/modulo10.git gobarber-web
+git clone https://github.com/lucasraziel/gobarber-mobilev1.git gobarber-mobile
 
-cd gobarber-web
+cd gobarber-mobile
 
 yarn
 
