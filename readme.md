@@ -25,7 +25,7 @@ This software is a demonstration for scheduling appointments for a barber shop.
 </div>
 It is separated among three projects
 
- - [Backend](https://github.com/lucasraziel/gobarber-server)
+ - [Backend](https://github.com/lucasraziel/GoBarber)
  - [Web](https://github.com/lucasraziel/gobarber-webv1)
  - [Mobile](https://github.com/lucasraziel/gobarber-mobilev1)
     <br>
@@ -73,7 +73,7 @@ You should also start redis and mongodb server.
 
 
 ```
-git clone https://github.com/lucasraziel/gobarber-server.git gobarber-server
+git clone https://github.com/lucasraziel/GoBarber.git gobarber-server
 
 cd gobarber-server
 
