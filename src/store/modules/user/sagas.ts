@@ -5,7 +5,23 @@ import api from '~/services/api';
 
 import { updateProfileSuccess, updateProfileFailure } from './actions';
 
-export function* updateProfile({ payload }) {
+import {ActionTypes} from './reducer'
+
+interface Payload {
+  type: ActionTypes;
+  payload: {
+    data: {
+      name: string;
+      email: string;
+      avatar_id: string;
+      oldPassword: string;
+      password: string;
+    }
+
+  }
+}
+
+export function* updateProfile({ payload }:Payload) {
   try {
     const { name, email, avatar_id, ...rest } = payload.data;
 

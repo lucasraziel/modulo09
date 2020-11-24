@@ -7,13 +7,21 @@ import { signOut } from '~/store/modules/auth/actions';
 
 import AvatarInput from './AvatarInput';
 
+import {RootState} from '~/store'
+
 import { Container } from './styles';
+
+interface FormContent {
+  [key: string]: any;
+}
+
+
 
 export default function Profile() {
   const dispatch = useDispatch();
-  const profile = useSelector(state => state.user.profile);
+  const profile = useSelector<RootState, any>(state => state.user.profile);
 
-  function handleSubmit(data) {
+  function handleSubmit(data: object)  {
     dispatch(updateProfileRequest(data));
   }
 

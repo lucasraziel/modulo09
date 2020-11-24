@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+interface Past {
+  past: boolean;
+  available: boolean;
+}
+
 export const Container = styled.div`
   max-width: 600px;
   margin: 0 auto;
@@ -28,7 +33,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Time = styled.li`
+export const Time = styled.li<Past>`
   padding: 20px;
   border-radius: 4px;
   background: #fff;

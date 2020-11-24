@@ -5,8 +5,26 @@ import history from '~/services/history';
 import api from '~/services/api';
 
 import { signInSuccess, signFailure } from './actions';
+import {ActionTypes} from './reducer'
 
-export function* signIn({ payload }) {
+
+
+interface Payload {
+  type: ActionTypes;
+  payload: {
+    email: string;
+    password: string;
+    name: string;
+    auth: {
+      token: string
+    }
+  }
+
+}
+
+
+
+export function* signIn({ payload }: Payload) {
   try {
     const { email, password } = payload;
 
@@ -33,7 +51,7 @@ export function* signIn({ payload }) {
   }
 }
 
-export function* signUp({ payload }) {
+export function* signUp({ payload }: Payload) {
   try {
     const { name, email, password } = payload;
 
@@ -51,7 +69,7 @@ export function* signUp({ payload }) {
     yield put(signFailure());
   }
 }
-export function setToken({ payload }) {
+export function setToken({ payload }: Payload) {
   if (!payload) return;
 
   const { token } = payload.auth;

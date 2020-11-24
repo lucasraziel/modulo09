@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 import { Wrapper, Content } from './styles';
 
-export default function AuthLayout({ children }) {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function AuthLayout({ children }:Props) {
   return (
     <Wrapper>
       <Content>{children}</Content>

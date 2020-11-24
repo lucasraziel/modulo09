@@ -4,13 +4,17 @@ import api from '~/services/api';
 
 import { Container } from './styles';
 
-export default function AvatarInput() {
+interface Props {
+  name: string;
+}
+
+export default function AvatarInput(props: Props) {
   const { defaultValue, registerField } = useField('avatar');
 
   const [file, setFile] = useState(defaultValue && defaultValue.id);
   const [preview, setPreview] = useState(defaultValue && defaultValue.url);
 
-  const ref = useRef();
+  const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (ref.current) {
@@ -22,8 +26,12 @@ export default function AvatarInput() {
     }
   }, [ref, registerField]);
 
-  async function handleChange(e) {
+  async function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const data = new FormData();
+
+    if (!e.target || !e.target.files){
+      return;
+    }
 
     data.append('file', e.target.files[0]);
 

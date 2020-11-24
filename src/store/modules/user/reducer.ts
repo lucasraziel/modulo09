@@ -4,7 +4,23 @@ const INITIAL_STATE = {
   profile: null,
 };
 
-export default function user(state = INITIAL_STATE, action) {
+interface Initial {
+  profile: null | object
+}
+
+interface Payload {
+  user: object;
+  profile: object;
+}
+
+interface Action {
+  type: ActionTypes
+  payload: Payload;
+}
+
+export type ActionTypes = '@auth/SIGN_IN_SUCCESS' | '@user/UPDATE_PROFILE_SUCCESS' | '@auth/SIGN_OUT'
+
+export default function user(state: Initial = INITIAL_STATE, action: Action) {
   return produce(state, draft => {
     switch (action.type) {
       case '@auth/SIGN_IN_SUCCESS': {

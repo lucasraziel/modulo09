@@ -5,10 +5,17 @@ import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 import { signInRequest } from '~/store/modules/auth/actions';
+import { RootState } from '~/store';
+
 
 import logo from '~/assets/logo.svg';
 
-const schema = Yup.object().shape({
+interface FormContent {
+  email: string;
+  password: string;
+}
+
+const schema= Yup.object().shape({
   email: Yup.string()
     .email('Insira um e-mail válido')
     .required('O e-mail é obrigatório'),
@@ -17,9 +24,9 @@ const schema = Yup.object().shape({
 
 export default function SignIn() {
   const dispatch = useDispatch();
-  const loading = useSelector(state => state.auth.loading);
+  const loading = useSelector<RootState>(state => state.auth.loading);
 
-  function handleSubmit({ email, password }) {
+  function handleSubmit({ email, password }:any) {
     dispatch(signInRequest(email, password));
   }
 
@@ -27,7 +34,7 @@ export default function SignIn() {
     <>
       <img src={logo} alt="GoBarber" />
 
-      <Form schema={schema} onSubmit={handleSubmit}>
+      <Form schema={schema as Yup.ObjectSchema<object,object> } onSubmit={handleSubmit}>
         <Input name="email" type="email" placeholder="Seu e-mail" />
         <Input
           name="password"

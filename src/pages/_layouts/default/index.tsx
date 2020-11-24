@@ -4,7 +4,11 @@ import Header from '~/components/Header';
 
 import { Wrapper } from './styles';
 
-export default function DefaultLayout({ children }) {
+interface Props {
+  children: React.ReactNode
+}
+
+export default function DefaultLayout({ children }: Props) {
   return (
     <Wrapper>
       <Header />

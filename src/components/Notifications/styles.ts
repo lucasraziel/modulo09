@@ -2,11 +2,23 @@ import styled, { css } from 'styled-components';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { lighten } from 'polished';
 
+interface Visible {
+  visible: boolean
+}
+
+interface HasUnread {
+  hasUnread: boolean
+}
+
+interface Unread {
+  unread: boolean;
+}
+
 export const Container = styled.div`
   position: relative;
 `;
 
-export const Badge = styled.button`
+export const Badge = styled.button<HasUnread>`
   background: none;
   border: 0;
   position: relative;
@@ -26,7 +38,7 @@ export const Badge = styled.button`
     `}
 `;
 
-export const NotificationList = styled.div`
+export const NotificationList = styled.div<Visible>`
   position: absolute;
   width: 260px;
   left: calc(50% - 130px);
@@ -53,7 +65,7 @@ export const Scroll = styled(PerfectScrollbar)`
   padding: 5px 15px;
 `;
 
-export const Notification = styled.div`
+export const Notification = styled.div<Unread>`
   color: #fff;
   & + div {
     margin-top: 15px;

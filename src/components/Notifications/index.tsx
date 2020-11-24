@@ -13,9 +13,17 @@ import {
   Notification,
 } from './styles';
 
+interface Notification {
+  read: boolean;
+  _id: number;
+  createdAt: string;
+  content: string;
+  timeDistance: string;
+}
+
 export default function Notifications() {
   const [visible, setVisible] = useState(false);
-  const [notifications, setNotifications] = useState([]);
+  const [notifications, setNotifications] = useState<Notification[]>([]);
 
   const hasUnread = useMemo(
     () => !!notifications.find(notification => notification.read === false),
@@ -26,7 +34,7 @@ export default function Notifications() {
     async function loadNotifications() {
       const response = await api.get('notifications');
 
-      const data = response.data.map(notification => ({
+      const data = response.data.map((notification: Notification) => ({
         ...notification,
         timeDistance: formatDistance(
           parseISO(notification.createdAt),
@@ -47,7 +55,7 @@ export default function Notifications() {
     setVisible(!visible);
   }
 
-  async function handleMarkAsRead(id) {
+  async function handleMarkAsRead(id:number) {
     await api.put(`notifications/${id}`);
 
     setNotifications(

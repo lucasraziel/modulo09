@@ -1,11 +1,17 @@
-export function updateProfileRequest(data) {
+export interface Profile {
+  name: string;
+  avatar: string;
+  email: string;
+}
+
+export function updateProfileRequest(data: object) {
   return {
     type: '@user/UPDATE_PROFILE_REQUEST',
     payload: { data },
   };
 }
 
-export function updateProfileSuccess(profile) {
+export function updateProfileSuccess(profile: Profile) {
   return {
     type: '@user/UPDATE_PROFILE_SUCCESS',
     payload: { profile },

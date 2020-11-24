@@ -19,8 +19,18 @@ import { Container, Time } from './styles';
 
 const range = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
+interface Appointment {
+  time: string;
+  past: boolean;
+  appointment: any;
+}
+
+interface Response {
+  date: string;
+}
+
 export default function Dashboard() {
-  const [schedule, setSchedule] = useState([]);
+  const [schedule, setSchedule] = useState<Appointment[]>([]);
   const [date, setDate] = useState(new Date());
 
   const dateFormatted = useMemo(
@@ -30,7 +40,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function loadSchedule() {
-      const response = await api.get('schedule', {
+      const response = await api.get<Response[]>('schedule', {
         params: { date },
       });
 
